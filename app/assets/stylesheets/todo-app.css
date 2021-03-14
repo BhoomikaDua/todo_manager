@@ -112,3 +112,6 @@
 .todo-app-category-todo:hover .todo-app-delete-todo{
   display: inline;
 }
+.todo-app-category-todo.todo-app-completed{
+  text-decoration: line-through;
+}

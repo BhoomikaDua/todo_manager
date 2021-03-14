@@ -3,8 +3,12 @@
   </h3>
   <ul class="todo-app-category-section-list">
     <% todos.each do |todo| %>
-      <li class="todo-app-category-todo">
-        <input type="checkbox" class="todo-app-completed-todo-checkbox"> <%= todo.todo_text %>
+      <%
+        is_completed_class = todo.completed ? "todo-app-completed" : ""
+        is_checked = todo.completed ? "checked" : ""
+      %>
+      <li class="todo-app-category-todo <%= is_completed_class %> ">
+        <input type="checkbox" <%= is_checked %> class="todo-app-completed-todo-checkbox"> <%= todo.todo_text %>
 
         <% if(show_due_date)%>
           <span class="todo-app-date-label"><%=todo.due_date.to_s(:short)%></span>
