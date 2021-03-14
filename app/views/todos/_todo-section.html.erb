@@ -21,12 +21,11 @@
           <span class="todo-app-date-label"><%=todo.due_date.to_s(:short)%></span>
         <% end%>
 
-        <span class="todo-app-delete-todo">
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path fill="currentColor"
-              d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
-          </svg>
-        </span>
+        <%= form_with(url: "todos/#{todo.id}", method: "delete") do %>
+          <span class="todo-app-delete-todo" onclick="document.querySelector('.todo-app-hidden-delete-button').click()">
+            <input type="image" src="delete.png">
+          </span>
+        <% end %>
       </li>
     <% end %>
   </ul>
