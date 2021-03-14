@@ -8,7 +8,14 @@
         is_checked = todo.completed ? "checked" : ""
       %>
       <li class="todo-app-category-todo <%= is_completed_class %> ">
-        <input type="checkbox" <%= is_checked %> class="todo-app-completed-todo-checkbox"> <%= todo.todo_text %>
+        <%= form_with(url: "todos/#{todo.id}", method: "put") do %>
+          <input
+          type="checkbox" <%= is_checked %>
+          class="todo-app-completed-todo-checkbox"
+          name="completed"
+          onclick="this.form.submit()"
+          > <%= todo.todo_text %>
+        <% end %>
 
         <% if(show_due_date)%>
           <span class="todo-app-date-label"><%=todo.due_date.to_s(:short)%></span>

@@ -31,8 +31,7 @@ class TodosController < ApplicationController
     todo.completed = completed
     todo.save
 
-    response_text = "Hey, your todo with the id #{todo.id} is updated"
-    render plain: response_text
+    redirect_to todos_path
   end
 
 end
