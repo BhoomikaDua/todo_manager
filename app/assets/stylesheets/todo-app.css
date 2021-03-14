@@ -101,3 +101,14 @@
   width: 19px!important;
   margin-left: 10px;
 }
+
+.todo-app-delete-todo{
+  display: none;
+}
+.todo-app-category-todo:hover{
+  background: #F1EDF7;
+  cursor: pointer;
+}
+.todo-app-category-todo:hover .todo-app-delete-todo{
+  display: inline;
+}

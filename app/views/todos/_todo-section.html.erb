@@ -1,0 +1,22 @@
+<section class="todo-app-category-section">
+  <h3 class="todo-app-category-section-title"><%= section_title %><span class="todo-app-category-section-summary"><%= todos.completed.count %> / <%= todos.count %></span>
+  </h3>
+  <ul class="todo-app-category-section-list">
+    <% todos.each do |todo| %>
+      <li class="todo-app-category-todo">
+        <input type="checkbox" class="todo-app-completed-todo-checkbox"> <%= todo.todo_text %>
+
+        <% if(show_due_date)%>
+          <span class="todo-app-date-label"><%=todo.due_date.to_s(:short)%></span>
+        <% end%>
+
+        <span class="todo-app-delete-todo">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+          </svg>
+        </span>
+      </li>
+    <% end %>
+  </ul>
+</section>
