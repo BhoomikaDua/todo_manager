@@ -1,19 +1,21 @@
 class UsersController < ApplicationController
   protect_from_forgery with: :null_session
   def index
-    render plain: User.all.map{ |user| user.display_user_info}.join("\n")
+    render plain: "hello"
+  end
+
+  def new
+    render "users/new"
   end
 
   def create
-    name= params[:name]
-    email=params[:email]
-    password=params[:password]
-    new_user = User.create!(
-      name:name,
-      email:email,
-      password:password
+    User.create!(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email:params[:email],
+      password:params[:password]
     )
-    response_text = "New user is created with id #{new_user.id}"
-    render plain: response_text
+    redirect_to "/"
   end
+
 end
