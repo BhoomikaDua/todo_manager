@@ -5,6 +5,9 @@ class Todo < ActiveRecord::Base
     completed_icon = completed ? "[X]" : "[ ]"
     "#{id}. #{due_date.to_s(:long)} #{todo_text} #{completed_icon}"
   end
+  def self.of_user(user)
+    all.where(user_id: user.id)
+  end
   def due_today?
     due_date == Date.today
   end
