@@ -1,0 +1,48 @@
+.todo-app-top-navigation{
+  height:70px;
+  background: #FFFFFF;
+  border: 1px solid #E6E6E6;
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+}
+.todo-app-flash-meassage-conatiner{
+  background: #f1ebeb;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid red;
+  border-radius: 14px;
+  height:100px;
+  width:700px;
+  margin:20px auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:red;
+  font-size:20px
+}
+
+.todo-app-top-navigation-content{
+  width:700px;
+  display:flex;
+  justify-content:space-between;
+  font-family: 'Open Sans', sans-serif;
+  align-items:center;
+  margin:auto;
+  height:100%;
+  font-size:20px
+}
+.todo-app-sign-out{
+  width:100px;
+  background:red;
+  height:40px;
+  color:white;
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:30px;
+  font-weight:600;
+  font-size:16px;
+}
+.todo-app-sign-out:hover{
+  background:#da2626;
+}

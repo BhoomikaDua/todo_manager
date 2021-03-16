@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = user.id
       redirect_to "/"
     else
-      render plain: "InCorrect"
+      flash[:error] = "Your Login Attempt Was Invalid, Please Try Again. "
+      redirect_to new_sessions_path
     end
   end
 

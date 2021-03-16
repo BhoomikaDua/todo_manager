@@ -11,13 +11,23 @@
   </head>
 
   <body>
-  <% if(@current_user) %>
-    <p>
-      Welcome, <%= @current_user.first_name %>!
-      <%= link_to "Sign Out", destroy_session_path, method: "delete"%>
-    </p>
-  <% end %>
-    <%= link_to "Sign Out", destroy_session_path, method: "delete"%>
+
+    <% if(@current_user) %>
+      <nav class="todo-app-top-navigation">
+        <p class="todo-app-top-navigation-content">
+          <span>Welcome, <%= @current_user.first_name %>!</span>
+          <%= link_to "Sign Out", destroy_session_path, method: "delete", class: "todo-app-sign-out"%>
+        </p>
+      </nav>
+    <% end %>
+
+
+    <% if(flash[:error]) %>
+        <div class="todo-app-flash-meassage-conatiner">
+          <%= flash[:error] %>
+        </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
