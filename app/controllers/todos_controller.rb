@@ -16,10 +16,12 @@ class TodosController < ApplicationController
   def create
     todo_text= params[:todo_text]
     due_date= DateTime.parse(params[:due_date])
+    user_id= current_user.id
     new_todo = Todo.create!(
       todo_text:todo_text,
       due_date:due_date,
-      completed:false
+      completed:false,
+      user_id:user_id
     )
     redirect_to todos_path
   end
